@@ -3,13 +3,19 @@
 var author = $(".cover-heading"),
     quoteBody = $(".quoteBody"),
     twitter = $("#twitter"),
-    nextButton = $("#next");
+    nextButton = $("#next"),
+    index = 0;
+    $imageEls = $('.toggle-image'); // Get the images to be cycled.
+
     $(document).ready(function(){
 	    setInterval(function(){
-	       var imageUrl = "img/"+Math.round(Math.random()*5+1)+".jpg";
-	        $('body').css("background-image",'url('+imageUrl+')'); 	
+	        index = index + 1 < $imageEls.length ? index + 1 : 0;
+	        // Show the next image.
+	        $imageEls.eq(index).addClass('show');
+	        // Hide the previous image.
+	        $imageEls.eq(index - 1).removeClass('show');
 			
-	     }, 13000);	
+	     }, 23000);	
     });
        
 	 nextButton.click(function(){

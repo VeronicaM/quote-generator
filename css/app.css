@@ -1,7 +1,85 @@
-body{
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+	z-index: 10;
+}
+.background-image{
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image:url('../img/1.jpg'); 
+}
+.toggle-image {
+      width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+      transition: opacity 1s ease-in-out;
+}
+.site-wrapper {
+     z-index: 11;
+}
+
+ .first-image {
+    background-image: url('../img/1-min.jpg');
+    z-index: -6;
+    opacity: 0;
+}
+
+.second-image {
+    background-image: url('../img/2-min.jpg');
+    z-index: -5;
+    opacity: 0;
+}
+
+.third-image {
+    background-image: url('../img/3-min.jpg');
+    z-index: -4;
+    opacity: 0;
+}
+
+.fourth-image {
+    background-image: url('../img/4-min.jpg');
+    z-index: -3;
+    opacity: 0;
+}
+
+.fifth-image {
+    background-image: url('../img/5-min.jpg');
+    z-index: -2;
+    opacity: 0;
+}
+
+.sixth-image {
+    background-image: url('../img/6-min.jpg');
+    z-index: -1;
+     opacity: 0;
+}
+.first-image.show {
+    opacity: 1;
+}
+
+.second-image.show {
+    opacity: 1;
+}
+
+.third-image.show {
+    opacity: 1;
+}
+.fourth-image.show {
+    opacity: 1;
+}
+
+.fifth-image.show {
+    opacity: 1;
+}
+
+.sixth-image.show {
+    opacity: 1;
 }
 .cover{
 	background-color: black;
