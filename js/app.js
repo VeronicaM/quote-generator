@@ -21,10 +21,19 @@ var author = $(".cover-heading"),
 					quoteBody.text(response.quoteText);
 	};
 	 twitter.click(function(){
-	 	 getQuoteData();
+	 	     var textToTweet = quoteBody.text()+"by "+author.text();
+		 	 var twtLink = 'http://twitter.com/home?status=' +encodeURIComponent(textToTweet);
+		 	 window.open(twtLink,'_blank');
 	 });
 	 function getQuoteData(){
-		var script = document.createElement("script"); 
-		script.src = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=displayData"; 
-		document.getElementsByTagName("head")[0].appendChild(script);
+		// var script = document.createElement("script"); 
+		// script.src = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=displayData"; 
+		// document.getElementsByTagName("head")[0].appendChild(script);
+    	$.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?',
+    	 function(response){
+    	 	 displayData(response);
+    	 	 $body.removeClass('loading');
+    	 	 $(".site-wrapper").removeClass('hideOnLoad');
+    	 });
 	};
+

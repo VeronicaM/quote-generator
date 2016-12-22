@@ -42,3 +42,9 @@ body{
 #twitter:hover{
 	color:deepskyblue;
 }
+.loading {
+	background: url('../img/ico_loading.gif') no-repeat center center;
+}
+.hideOnLoad{
+	visibility: hidden;
+}

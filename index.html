@@ -33,16 +33,19 @@
 	<link href="css/app.css" rel="stylesheet">
   </head>
 
-  <body onpageshow="getQuoteData()">
+  <body  class="loading" onload="getQuoteData()">
 
-    <div class="site-wrapper">
+    <div  class="site-wrapper hideOnLoad">
 
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
           <div class="inner cover">
-            <div class="header"> <h1 class="cover-heading">Author Name </h1>  <a href="#" id="twitter"> <i  class="fa fa-twitter" aria-hidden="true"></i></a></div>
-            <p class="lead quoteBody">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+            <div class="header"> <h1 class="cover-heading"></h1>  <a 
+              href="#"
+              id="twitter"> <i  class="fa fa-twitter" aria-hidden="true"></i></a></div>
+
+            <p class="lead quoteBody"></p>
             <p class="lead">
               <a id="next" href="#" class="btn btn-lg btn-secondary">Next</a>
              
