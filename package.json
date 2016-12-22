@@ -2,7 +2,7 @@
   "name": "quote-generator",
   "version": "0.0.1",
   "description": "Quote Generator app",
-  "main": "index.html",
+  "start": "index.html",
   "author": {
     "name": "Veronica Mihai",
     "email": "mihaiveronica@ymail.com"
