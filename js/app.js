@@ -4,7 +4,8 @@ var author = $(".cover-heading"),
     quoteBody = $(".quoteBody"),
     twitter = $("#twitter"),
     nextButton = $("#next"),
-    index = 0;
+    index = 0,
+    quoteLink='';
     $imageEls = $('.toggle-image'); // Get the images to be cycled.
 
     $(document).ready(function(){
@@ -25,9 +26,13 @@ var author = $(".cover-heading"),
 		  		var authorN = response.quoteAuthor || "Unknown";
 					author.text(authorN);
 					quoteBody.text(response.quoteText);
+					quoteLink =response.quoteLink;
 	};
 	 twitter.click(function(){
 	 	     var textToTweet = quoteBody.text()+"by "+author.text();
+	 	     if(textToTweet.length >=140){
+	 	     	 textToTweet = textToTweet.substring(0,70)+'... by '+author.text()+" "+quoteLink;
+	 	     }
 		 	 var twtLink = 'http://twitter.com/home?status=' +encodeURIComponent(textToTweet);
 		 	 window.open(twtLink,'_blank');
 	 });
