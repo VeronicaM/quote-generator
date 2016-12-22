@@ -1,17 +1,27 @@
 	$window = $(window);
 	$body = $('body');
 var author = $(".cover-heading"),
-    quoteBody = $(".lead quoteBody"),
+    quoteBody = $(".quoteBody"),
+    twitter = $("#twitter"),
     nextButton = $("#next");
     $(document).ready(function(){
 	    setInterval(function(){
-	    try{
-	    	var imageUrl = "https://unsplash.it/1000/?image="+Math.round(Math.random()*1080);
-	        $('body').css("background-image",'url('+imageUrl+')'); 
-	      }catch(ex){
-             console.log(ex);
-	      }  
-	    	
+	       var imageUrl = "img/"+Math.round(Math.random()*5+1)+".jpg";
+	        $('body').css("background-image",'url('+imageUrl+')'); 	
+			
 	     }, 13000);	
     });
-    
+        function getQuote(){
+	    	$.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?',function(response){
+				var authorN = response.quoteAuthor || "Unknown";
+				author.text(authorN);
+				quoteBody.text(response.quoteText);
+			});
+	  }
+	 nextButton.click(function(){
+	 	 getQuote();
+	 });
+
+	 twitter.click(function(){
+	 	 getQuote();
+	 }) 

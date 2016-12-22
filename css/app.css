@@ -1,5 +1,44 @@
 body{
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image:url('https://unsplash.it/800/?image=0'); 
+	background-image:url('../img/1.jpg'); 
+}
+.cover{
+	background-color: black;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    padding: 34px 34px 10px 34px;
+    border-radius: 20px;
+    border-color: orange;
+    border-width: 1px;
+    box-shadow: 11px 5px 19px black;
+}
+.cover-heading{
+	color: gold;
+}
+.mastfoot{
+	color: white;
+    font-weight: 500;
+}
+#next{
+	background-color: blanchedalmond;
+	color: black;
+    font-weight: 800;
+}
+#next:hover{
+	background-color: burlywood;
+}
+.header{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: baseline;
+}
+#twitter{
+	color:turquoise;
+	font-size: 30px;
+    padding-left: 10px;
+}
+#twitter:hover{
+	color:deepskyblue;
 }
