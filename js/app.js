@@ -11,17 +11,20 @@ var author = $(".cover-heading"),
 			
 	     }, 13000);	
     });
-        function getQuote(){
-	    	$.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?',function(response){
-				var authorN = response.quoteAuthor || "Unknown";
-				author.text(authorN);
-				quoteBody.text(response.quoteText);
-			});
-	  }
+       
 	 nextButton.click(function(){
-	 	 getQuote();
+	 	 getQuoteData();
 	 });
-
+	function displayData(response){
+		  		var authorN = response.quoteAuthor || "Unknown";
+					author.text(authorN);
+					quoteBody.text(response.quoteText);
+	};
 	 twitter.click(function(){
-	 	 getQuote();
-	 }) 
+	 	 getQuoteData();
+	 });
+	 function getQuoteData(){
+		var script = document.createElement("script"); 
+		script.src = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=displayData"; 
+		document.getElementsByTagName("head")[0].appendChild(script);
+	};
